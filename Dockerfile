@@ -2,7 +2,7 @@ FROM tianon/centos:6.5
 MAINTAINER Jimmi Dyson jimmi.dyson@specsavers.com
 
 RUN yum update --setopt=tsflags=nodocs --setopt=group_package_types=mandatory -y
-RUN yum install --setopt=tsflags=nodocs --setopt=group_package_types=mandatory -y java-1.7.0-openjdk.x86_64 sha1sum tar
+RUN yum install --setopt=tsflags=nodocs --setopt=group_package_types=mandatory -y java-1.7.0-openjdk.x86_64 tar
 RUN yum clean all
 
 ADD http://jruby.org.s3.amazonaws.com/downloads/1.7.11/jruby-bin-1.7.11.tar.gz /jruby-bin-1.7.11.tar.gz
