@@ -16,4 +16,5 @@ ENV PATH /opt/jruby-1.7.11/bin:$PATH
 
 RUN echo gem: --no-document >> /etc/gemrc
 
+RUN gem update --system
 RUN gem install bundler
