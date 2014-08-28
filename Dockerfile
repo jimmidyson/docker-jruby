@@ -3,9 +3,11 @@ MAINTAINER Jimmi Dyson jimmidyson@gmail.com
 
 RUN apt-get update && apt-get install -y --no-install-recommends openjdk-7-jre-headless tar curl && apt-get autoremove -y && apt-get clean
 
-RUN curl http://jruby.org.s3.amazonaws.com/downloads/1.7.13/jruby-bin-1.7.13.tar.gz | tar xz -C /opt
+ENV JRUBY_VERSION 1.7.14
 
-ENV PATH /opt/jruby-1.7.13/bin:$PATH
+RUN curl http://jruby.org.s3.amazonaws.com/downloads/$JRUBY_VERSION/jruby-bin-$JRUBY_VERSION.tar.gz | tar xz -C /opt
+
+ENV PATH /opt/jruby-$JRUBY_VERSION/bin:$PATH
 
 RUN echo gem: --no-document >> /etc/gemrc
 
